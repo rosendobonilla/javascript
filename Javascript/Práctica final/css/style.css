@@ -1,0 +1,31 @@
+body {
+    background-color: rgb(210, 210, 221);
+}
+
+.componentes {
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+}
+
+.stats{
+    width: 95%;
+    height: 260px;
+    margin: auto;
+    padding: 10px;
+    background-color: rgb(200, 220, 230);
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+}
+
+.borde{
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+
+}

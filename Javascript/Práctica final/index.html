@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Desarollo de aplicaciones web</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="icons/icono-js.png" width="30" height="30" class="align-top" alt="">
+            Desarrollo de aplicaciones web
+        </a>
+
+    </nav>
+
+    <h1 class="text-center my-5">Componentes para computadora</h1>
+    <div id="container" class="container">
+        <div id="app">
+            <div class="row my-4">
+                <div class="col-4">
+                    <div class="card borde text-black bg-light">
+                        <div class="card-header">Nuevo componente</div>
+                        <div class="card-body">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <img src="icons/nombre.png" alt=""> </span>
+                                </div>
+                                <input id="txt-nombre" type="text" class="form-control" placeholder="Nombre">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <img src="icons/marca.png" alt=""> </span>
+                                </div>
+                                <input id="txt-marca" type="text" class="form-control" placeholder="Marca">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <img src="icons/model.png" alt=""> </span>
+                                </div>
+                                <input id="txt-modelo" type="text" class="form-control" placeholder="Modelo">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <img src="icons/serie.png" alt=""> </span>
+                                </div>
+                                <input id="txt-serie" type="text" class="form-control" placeholder="No. serie">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <img src="icons/precio.png" alt=""> </span>
+                                </div>
+                                <input id="txt-precio" type="text" class="form-control" placeholder="Precio">
+                            </div>
+
+                            <div class="text-center">
+                                <input id="botonGuardar" type="button" value="Guardar" class="btn btn-info">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="componentes" class="col-8 componentes">
+                    <br>
+
+                    Filtrar componentes por:
+
+                    <div class="input-group-append my-3">
+                        <form id="form-nombre" >
+                            <input id="nombre" type="text" class="form-control" placeholder="nombre"
+                                aria-label="Username">
+                        </form>
+                        <form id="form-marca" >
+                            <input id="marca" type="text" class="form-control" placeholder="marca"
+                                aria-label="Username">
+                        </form>
+                        <form id="form-serie" >
+                            <input id="serie" type="text" class="form-control" placeholder="serie"
+                                aria-label="Username">
+                        </form>
+                        <form id="form-precio" >
+                            <input id="precio" type="text" class="form-control" placeholder="precio"
+                                aria-label="Username">
+                        </form>
+                        <form id="form-todos">
+                            <input id="botonMostrarTodos" type="button" class="form-control btn btn-warning"
+                                value="Todos">
+                        </form>
+                    </div>
+                    <div id="stats" class="stats">
+                        <h3 class="text-center ">Estadísticas</h3>
+
+                        <div id="info" class="mt-4">
+                            <strong>Total de componentes: <div id="info-total" class="badge badge-dark">0</div>
+                            </strong>
+                            <br><br>
+                            <strong>Componente más caro: <div id="info-caro" class="badge badge-danger ml-2">-</div>
+                            </strong> <br><br>
+                            <strong>Componente más barato: <div id="info-barato" class="badge badge-success ml-2">-
+                                </div>
+                            </strong> <br><br>
+                            <strong>Suma total: <div id="info-suma" class="badge badge-dark">$0</div></strong>
+                        </div>
+                    </div>
+
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal mostrar elementos-->
+    <div class="modal fade" id="modalComponentes" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalScrollableTitle">Componentes</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="lista-componentes" class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/Componente.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

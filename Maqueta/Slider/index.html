@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/custom.css" type="text/css">
+    <link rel="stylesheet" href="css/demo.css" type="text/css">
+    <link rel="stylesheet" href="css/slicebox.css" type="text/css">
+    <script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
+
+</head>
+
+<body>
+    <div id="global">
+        <div id="slider-3d">
+            <div class="container">
+                <div class="wrapper">
+
+                    <ul id="sb-slider" class="sb-slider">
+                        <li>
+                            <a href="#" target="_blank"><img src="images/img/cloud-computing.jpg" alt="image1" /></a>
+                            <div class="sb-description">
+                                <h3>Technology</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/img/cloud.png" alt="image2" /></a>
+                            <div class="sb-description">
+                                <h3>Cloud computing</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/img/codecode.jpg" alt="image1" /></a>
+                            <div class="sb-description">
+                                <h3>Coding</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/img/crime.png" alt="image1" /></a>
+                            <div class="sb-description">
+                                <h3>Hacking</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/img/hack.jpg" alt="image1" /></a>
+                            <div class="sb-description">
+                                <h3>Hack</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/img/js-2.png" alt="image1" /></a>
+                            <div class="sb-description">
+                                <h3>Javascript</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/img/js.jpg" alt="image1" /></a>
+                            <div class="sb-description">
+                                <h3>Javascript 2</h3>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div id="shadow" class="shadow"></div>
+
+                    <div id="nav-arrows" class="nav-arrows">
+                        <a href="#">Next</a>
+                        <a href="#">Previous</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.slicebox.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            
+            var Page = (function() {
+
+                var $navArrows = $( '#nav-arrows' ).hide(),
+                    $shadow = $( '#shadow' ).hide(),
+                    slicebox = $( '#sb-slider' ).slicebox( {
+                        onReady : function() {
+
+                            $navArrows.show();
+                            $shadow.show();
+
+                        },
+                        orientation : 'r',
+                        cuboidsRandom : true,
+                        disperseFactor : 30
+                    } ),
+                    
+                    init = function() {
+
+                        initEvents();
+                        
+                    },
+                    initEvents = function() {
+
+                        // add navigation events
+                        $navArrows.children( ':first' ).on( 'click', function() {
+
+                            slicebox.next();
+                            return false;
+
+                        } );
+
+                        $navArrows.children( ':last' ).on( 'click', function() {
+                            
+                            slicebox.previous();
+                            return false;
+
+                        } );
+
+                    };
+
+                    return { init : init };
+
+            })();
+
+            Page.init();
+
+        });
+    </script>
+    
+</body>
+
+</html>
